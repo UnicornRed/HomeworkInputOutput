@@ -8,7 +8,7 @@ ParserData::ParserData(std::string filename)
     in.open(filename);
 
     if (!in)
-        throw  std::ios_base::failure("Error! The name of the input file is missing. Try: ./io_parser [name_of_file]");
+        throw  std::ios_base::failure("Error! The file was not opened");
 }
 
 void RemoveSpaceFromEnd(std::string& str)
