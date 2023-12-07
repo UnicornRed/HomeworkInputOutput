@@ -50,7 +50,7 @@ void ParserData::DoParse()
             }
             catch(const std::exception& e)
             {
-                throw  std::ios_base::failure("Error! Incorrect format of a real number: row = " +
+                throw  IncorrectElementException("Error! Incorrect format of a real number: row = " +
                     std::to_string(data.size()) + ", col = " + std::to_string(data.back().size() + 1));
             }
 
@@ -58,7 +58,7 @@ void ParserData::DoParse()
         }
 
         if (data.back().size() != nameCol.size())
-            throw  std::ios_base::failure("Error! The number of elements is not equal the number of columns: row = " + std::to_string(data.size()));
+            throw  ErrorLineException("Error! The number of elements is not equal the number of columns: row = " + std::to_string(data.size()));
     }
 }
 
